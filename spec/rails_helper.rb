@@ -33,7 +33,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = false
-
+  config.include FactoryGirl::Syntax::Methods 
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
