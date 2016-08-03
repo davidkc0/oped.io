@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
+<header> 
 	<%= link_to "Write an opinion piece", new_post_path %>
+	<% if user_signed_in? %>
+	<%= current_user.email %>
+	<%end%>
 </header>
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

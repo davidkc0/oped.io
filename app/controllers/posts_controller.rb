@@ -1,10 +1,11 @@
 class PostsController < ApplicationController 
+	before_action authenticate_user!
 	def new 
 		@post = Post.new 
 	end 
 
 	def create 
-		@post = Post.new(post_params)
+		@post = current_user.post.new(post_params)
 		if @post.save 
 		redirect_to root_url 
 		else 

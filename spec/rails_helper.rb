@@ -34,6 +34,22 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = false
 
+
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+  end  
+
+  config.before(:each) do |example|
+    DatabaseCleaner.strategy = example.metadata[:js] ? :truncation :transaction
+    DatabaseCleaner.start 
+  end
+
+  config.after do
+    DatabaseCleaner.clean 
+  end
+
+config.include Features, type: feature
+
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
