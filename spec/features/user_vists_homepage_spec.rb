@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.feature "User visits homepage" do 
-	scenario "successful and sees a logo" do 
+	scenario "successfuly and sees a logo" do 
 		visit root_path 
-		expect(page).to have_conntent "OpEd.io"
+		expect(page).to have_conntent "Oped"
 	end
 end
