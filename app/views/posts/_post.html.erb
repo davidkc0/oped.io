@@ -1,2 +1,4 @@
-<%= post.first_name %>
-<%= post.title %>
+<div class= "post-panel">
+<%= avatar_for(post.user, size: 40) %>
+<%= link_to post.username, post.user %>
+<h3><%= post.title %></h3></div>
