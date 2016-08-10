@@ -9,5 +9,11 @@
 <%end%>
 
 <% if user_signed_in? && current_user?(@user) %> 
-<button>Follow</button>
+	<% if current_user.following?(@user)%> 
+		<%= button_to "Unollow", relationships_path(user_id: @user.id), 
+		method: :delete, class: "button" %>
+	<%else%> 
+		<%= button_to "Follow", relationships_path(user_id: @user.id), 
+		class: "button" %> 
+	<%end%>
 <%end%>
