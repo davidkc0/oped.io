@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 	before_action :check_authorization, only: [:edit, :update] 
 	before_action :set_user
 	def show 
+		
 	end
 
 	def edit 
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
 		if @user.update!(user_params)
 			redirect_to @user 
 		else 
-			flash.now[:alert] = "Something went wrong. Please try again. But really go fuck yourself, because nothing went wrong."
+			flash.now[:alert] = "Something went wrong. Please try again."
 			render :edit 
 		end
 	end

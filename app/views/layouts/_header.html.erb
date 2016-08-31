@@ -1,14 +1,5 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-   <%= link_to "OpEd", root_path, class: "navbar-brand" %>
-   <ul class="nav navbar-nav navbar-right">
-	<li class= "new-opinion-button"><%= link_to "Share your opinion", new_post_path, class: "button" %></li>
-	<% if user_signed_in? %>
-	<li class= "current-user-avatar"><%= link_to(avatar_for(current_user, size: 25), current_user) %></li>
-	<li><%=link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-	<%else%> 
-	<li><%= link_to "Sign in / Sign up", new_user_session_path, class: "button" %> </li>
-	<%end%>
-	</ul>
-	</div>
-</nav> 
+<% if !user_signed_in? %>
+  <%= render '/layouts/header_guest' %>
+<% else %> 
+  <%= render '/layouts/header_user' %> 
+<%end%>

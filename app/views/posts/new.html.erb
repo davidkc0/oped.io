@@ -1,4 +1,4 @@
-<h1>share an opinion</h1>
+<center><h1>share an opinion</h1></center>
 
 <%= form_for @post do |f| %>
 <% if @post.errors.any? %>
@@ -13,16 +13,25 @@
 	</ul>
 </div>
 <%end%>
-
-
-<%= f.label  :title %> <br>
+<div class="col-xs-2">
+</div>
+<div class = "col-xs-8">
+<div class = "panel panel-default">
+<p>
+<%= f.label  :title %><br>
 <%= f.text_field :title %> 
-<%= f.label :body %> 
-<%= f.text_area :body %> 
+</p>
+<p>
+<%= f.label :body %><br>
+<%= f.text_area :body %>
+</p>
+<p> 
 <%= f.label :tags %>
 <%= f.text_field :all_tags %>
+</p>
 
-<%= f.submit "Publish" %>  
-
-
+<p><%= f.submit "Publish" %></p>
 <% end %>
+</div>
+</div>
+<div class="col-xs-2"></div>

@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
 	def show
-		@posts = Post.all 
-	end
+		@posts = Post.order(created_at: :desc)
+			end
 end 
