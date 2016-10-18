@@ -1,22 +1,22 @@
-class PostsController < ApplicationController 
+class PostsController < ApplicationController
 	before_action :authenticate_user!
 	def posts
 		@posts = Post.order(created_at: :desc)
 	end
 
 
-	def new 
-		@post = Post.new 
-	end 
+	def new
+		@post = Post.new
+	end
 
-	def create 
+	def create
 		@post = current_user.posts.new(post_params)
-		if @post.save 
+		if @post.save
 		redirect_to post_path(@post)
-		else 
-			render :new 
+		else
+			render :new
 		end
-	end 
+	end
 
 	def show
 		@post = Post.find(params[:id])
@@ -30,14 +30,14 @@ class PostsController < ApplicationController
 	  @post = Post.find(params[:id])
 	  if @post.update(params[:post].permit(:title, :body, :tags))
 	  	redirect_to @post
-	  else 
-	  	render 'edit' 
+	  else
+	  	render 'edit'
 	end
 end
 
-	def destory
+	def destroy
 		@post = Post.find(params[:id])
-		@post.destory
+		@post.destroy
 
 		redirect_to root_path
 	end
@@ -45,9 +45,8 @@ end
 
 
 
-	private 
+	private
 	def post_params
 		params.require(:post).permit(:title, :body, :all_tags)
-	end 
-end 
-
+	end
+end
