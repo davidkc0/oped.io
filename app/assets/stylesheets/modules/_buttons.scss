@@ -1,5 +1,13 @@
 .button {
 	border: 1px solid #e8e8e8;
 	padding: 0.5em 1.5em !important;
-	border-radius: 10px; 
+	border-radius: 1.5em; 
+	&:hover {
+		border: 1px solid #33acb7;
+		color: #33acb7;
+		a {
+			color: #33acb7 !important;
+		}
+	}
 }
+

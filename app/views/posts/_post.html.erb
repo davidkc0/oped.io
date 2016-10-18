@@ -9,10 +9,10 @@
         <h3><%=link_to post.title, post %></h3>
         <p class="index_date"><%= time_ago_in_words(post.created_at)%> ago</p>
        
-		<p><%= truncate post.body, length: 60 %>
+		<p><%= truncate post.body.html_safe, length: 60 %>
            <%= link_to "read more", post %> 
         </p>
-		<p> <%= post.all_tags %> </p>
+		<p><%= post.all_tags%></p>
     </div>
     </div>
     <div class="col-xs-1">
