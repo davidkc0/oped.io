@@ -1,7 +1,5 @@
 default: &default
-  adapter: postgresql
-  user: David 
-  password:
+  adapter: sqlite3
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   host: localhost
@@ -11,12 +9,12 @@ default: &default
 
 development:
   <<: *default
-  database: "development"
+  database: db/development.sqlite3
 
 test:
   <<: *default
-  database: "test"
+  database: db/test.sqlite3
 
 production:
   <<: *default
-  database: "production"
+  database: db/production.sqlite3
