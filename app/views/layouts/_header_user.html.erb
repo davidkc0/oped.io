@@ -4,7 +4,7 @@
    <ul class="nav navbar-nav navbar-right">
 	<li class= "new-opinion-button"><%= link_to "Share your opinion", new_post_path, class: "button" %></li>
 	<li class="dropdown">
-         <li class= "current-user-avatar"><%= link_to(avatar_for(current_user, size: 25), current_user) %></li>
+         <li class="current-user-avatar"><%= link_to(avatar_for(current_user, size: 25), current_user, class:"current-user-avatar") %></li>
           <ul class="dropdown-menu">
             <li><a href="users/<%=current_user.username%>">profile</a></li>
             <li><a href="#">help</a></li>
@@ -13,4 +13,4 @@
             <li><%=link_to('sign out', destroy_user_session_path, :method => :delete)%></li>
 	</ul>
 	</div>
-</nav> 
+</nav>
