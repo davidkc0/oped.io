@@ -15,9 +15,21 @@
 	<%end%>
 </div>
 
+<div class = "profile-description">
+	website:
+</div>
+<div class = "description-text">
+	<%= link_to @user.userurl %>
+</div>
 
-<%= @user.description %>
-<%= link_to @user.userurl %>
+<br>
+
+<div class = "profile-description">
+	bio: 
+</div>
+<div class = "description-text">
+	<%= @user.description %>
+</div>
 
 <br>
 <br>

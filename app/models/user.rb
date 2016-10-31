@@ -7,15 +7,15 @@ class User < ActiveRecord::Base
 
   has_many :passive_relationships, class_name: "Relationship",
   foreign_key: "follwed_id",
-  dependent: :destroy 
+  dependent: :destroy
 
-  has_many :followers, through: :passive_relationships, source: :follower 
-  
+  has_many :followers, through: :passive_relationships, source: :follower
+
   has_many :active_relationships, class_name: "Relationship",
   foreign_key: "follower_id",
-  dependent: :destroy 
+  dependent: :destroy
 
-  has_many :followings, through: :active_relationships, source: :follwed
+  has_many :followings, through: :active_relationships, source: :followed
 
   def follow(other_user)
   	active_relationships.create(follwed_id: other_user.id)
@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   	following_ids.include?(other_user.id)
   end
 
-  validates :username, presence: true  
+  validates :username, presence: true
 
   mount_uploader :avatar, AvatarUploader
 end

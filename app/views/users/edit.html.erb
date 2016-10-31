@@ -1,19 +1,39 @@
-<h1>Edit profile</h1> 
+<%= stylesheet_link_tag "user_profile.css" %>
+
+<h1>Edit profile</h1>
 
 <%= form_for(@user, html: {mulipart: true}) do |f| %>
 
-<%= f.label :username %> 
-<%= f.text_field :username %>
+<div class = "edit-item-title">
+  <%= f.label :username %>
+</div>
+<div class = "edit-item-text-field">
+  <%= f.text_field :username %>
+</div>
 
-<%= f.label :bio %>
-<%= f.text_area :description, placeholder: "Write something about yourself." %>
+<div class = "edit-item-title">
+  <%= f.label :bio %>
+</div>
+<div class = "edit-item-text-field">
+  <%= f.text_area :description, placeholder: "Write something about yourself." %>
+</div>
 
-<%= f.label :url %> 
-<%= f.url_field :userurl %>
+<div class = "edit-item-title">
+  <%= f.label :url %>
+</div>
+<div class = "edit-item-text-field">
+  <%= f.text_field :userurl %>
+</div>
 
+<div class = "edit-item-title">
+  <%= f.label :photo %>
+</div>
+<div class = "edit-item-text-field">
+  <%= f.file_field :avatar %>
+</div>
 
-
-<%= f.file_field :avatar %>
+<br>
 
 <%= f.submit "Save changes" %>
+
 <%end%>

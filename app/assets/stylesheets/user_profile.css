@@ -1,5 +1,20 @@
 .user-profile {
-  position: relative;
+  /*position: relative;
   left: 90%;
-  transform: translateX(-50%);
+  transform: translateX(-50%);*/
+}
+
+.edit-item-title {
+  margin-top: 2px;
+}
+
+.profile-description {
+  width: 70px;
+  text-align: right;
+  float: left;
+}
+
+.description-text {
+  float: left;
+  margin-left: .4em;
 }
