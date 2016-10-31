@@ -4,3 +4,10 @@
 <p class="show_options"><%= link_to "delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}%> </p>
 <p class="show_date">submiited <%= time_ago_in_words(@post.created_at)%> ago</p>
 <p class="show_body"><%=@post.body.html_safe%></p>
+<br> 
+<p>
+	(<%= @post.comments.count %>) comments
+</p>
+<p>add a comment <%= render @post.comments %></p>
+	 
+	<%= render "comments/form" %>

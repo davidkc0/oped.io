@@ -1,11 +1,12 @@
 class Post < ActiveRecord::Base
-	validates :title, presence: true, length: {minimum: 1, maximum: 10}
-	validates :body, presence: true, length: {minimum: 5}
+	validates :title, presence: true, length: {minimum: 1, maximum: 40}
+	validates :body, presence: true, length: {minimum: 5, maximum: 5000}
 	validates :tags, presence: true
 	validates :user_id, presence: true
 	belongs_to :user 
 	has_many :taggings, dependent: :destroy
-	has_many :tags, through: :taggings
+	has_many :tags, through: :taggings 
+	has_many :comments, dependent: :destroy 
 	
 	delegate :username, to: :user 
 

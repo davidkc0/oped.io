@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'homes#show'
-
-  resources :comments
+  resources :posts do 
+    resources :comments
+  end 
   resources :users, only: [:show, :edit, :update]
   resources :posts, only: [:new, :create, :show, :destroy, :update]
   resource :relationships, only: [:create, :destroy]
