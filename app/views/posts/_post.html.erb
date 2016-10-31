@@ -1,20 +1,22 @@
+<%= stylesheet_link_tag "post_page.css" %>
 
 <div class="row">
 	<div class="col-xs-1">
 	</div>
     <div class="col-xs-10">
     <div class="panel panel-default">
-    	<p><%= link_to(avatar_for(post.user, size: 40), current_user) %>
-		<%= link_to post.username, post.user %></p>
-        <h3><%=link_to post.title, post %></h3>
-        <p class="index_date"><%= time_ago_in_words(post.created_at)%> ago</p>
+			<h3 class = 'post-title'><%=link_to post.title, post, style: 'color:black' %></h3>
+    	<p style = 'font-size: 12px;'><%= link_to(avatar_for(post.user, size: 20), current_user) %>
+		<%= link_to post.username, post.user %>  <%= time_ago_in_words(post.created_at)%> ago</p>
 
 		<p><%= truncate_html(post.body.html_safe, length: 60) %>
-           <%= link_to "read more", post %>
+           <p style = 'font-size: 12px'>
+						 <%= link_to "Read More..", post %>
+					 </p>
         </p>
-		<p><%= post.all_tags%></p>
+		<p style = 'font-size: 11px;'>tags: <%= post.all_tags%></p>
     </div>
     </div>
     <div class="col-xs-1">
-    </div>
-    </div>
+  </div>
+</div>

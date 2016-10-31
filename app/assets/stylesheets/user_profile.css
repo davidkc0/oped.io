@@ -1,0 +1,5 @@
+.user-profile {
+  position: relative;
+  left: 90%;
+  transform: translateX(-50%);
+}
