@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   dependent: :destroy
 
   has_many :followings, through: :active_relationships, source: :followed
-
+  has_many :debates, dependent: :destroy
   def follow(other_user)
   	active_relationships.create(follwed_id: other_user.id)
   end

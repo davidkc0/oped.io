@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'debate/index'
+
+  get 'debate/show'
+
   devise_for :users
   root 'homes#show'
   resources :posts do 

@@ -7,6 +7,7 @@ class Post < ActiveRecord::Base
 	has_many :taggings, dependent: :destroy
 	has_many :tags, through: :taggings
 	has_many :comments, dependent: :destroy
+	has_many :dabates, dependent: :destroy
 
 	delegate :username, to: :user
 

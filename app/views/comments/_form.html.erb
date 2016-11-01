@@ -1,13 +1,18 @@
 <%= form_for ([@post,@post.comments.build]) do |f| %>
-	<p>
+  
+  <% if !user_signed_in? %>
+    <%= f.label :name == current_user.username %>
+  <% else %>  
     <%= f.text_field :name, placeholder: "name" %>
-	</p>
-	<br>
-	<p>
-		<%= f.text_area :body, placeholder: "add a comment" %>
-	</p>
-	<br>
-	<p>
-		<%= f.submit %>
-	</p>
-<%end %>
+  <%end%>
+  	
+  	 <br>
+
+  	<p>
+  		<%= f.text_area :body, placeholder: "write a comment" %>
+  	</p>
+  	 <br>
+  	<p>
+  		<%= f.submit %>
+  	</p>
+  <%end %>
