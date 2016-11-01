@@ -1,0 +1,32 @@
+.original-post {
+  width: 48%;
+  float: left;
+  margin: 5px;
+
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  padding: 10px;
+
+  font-family: 'Arial';
+  font-style: normal;
+}
+
+.response-post {
+  width: 48%;
+  float: left;
+  margin: 5px;
+
+
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  padding: 10px;
+
+  font-family: 'Arial';
+  font-style: normal;
+}
+
+.post-title {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -.05em;
+}

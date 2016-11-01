@@ -1,2 +1,21 @@
-<h1>Debate#show</h1>
-<p>Find me in app/views/debate/show.html.erb</p>
+<%= stylesheet_link_tag "debate_show.css" %>
+
+<div class = "original-post">
+  <div class="post-title">
+  Some post title
+  </div>
+  <p style = "font-size: 11px;">submitted an hour ago</p>
+  <p class="show_body">Body of the post</p>
+  <a style = 'font-size: 11px;' href="debate/show">edit</a> <a style = 'font-size: 11px;' href="debate/show">delete</a>
+</div>
+
+<div class = "response-post">
+  <div class="post-title">
+  Some response title
+  </div>
+  <p style = "font-size: 11px;">submitted an hour ago</p>
+  <p class="show_body">Body of the reply</p>
+  <!-- <a style = 'font-size: 11px;' href="debate/show">edit</a> <a style = 'font-size: 11px;' href="debate/show">delete</a> -->
+
+  <a style = 'font-size: 12px;' href="debate/show">Respond</a>
+</div>

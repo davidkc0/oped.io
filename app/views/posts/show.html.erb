@@ -1,14 +1,16 @@
 <h1 class="show_title">
 <%=@post.title%>
 </h1>
-<a style = 'font-size: 16px;' href="debate/show">(1 debate)</a>
-<p class="show_options"><%= link_to "delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}%> </p>
 <p class="show_date">submiited <%= time_ago_in_words(@post.created_at)%> ago</p>
 <p class="show_body"><%=@post.body.html_safe%></p>
-<br> 
-<h4>
+<p class="show_options"><%= link_to "edit", post_path(@post), method: :edit%> <%= link_to "delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}%></p>
+<a style = 'font-size: 16px;' href="debate/show">(1) debate</a>
+<br>
+<h4 style = "margin-top: 20px; font-size: 16px;">
 	(<%= @post.comments.count %>) comments
 </h4>
-<p><%= render @post.comments %></p>
-	 
+<div style = "border: 1px solid #e8e8e8; border-radius: 5px; padding: 5px;">
+	<%= render @post.comments %>
+</div>
+
 	<%= render "comments/form" %>

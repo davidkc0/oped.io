@@ -12,3 +12,4 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( post_page.css )
 Rails.application.config.assets.precompile += %w( user_profile.css )
+Rails.application.config.assets.precompile += %w( debate_show.css )
