@@ -1,8 +1,7 @@
 <h1 class="show_title">
 <%=@post.title%>
 </h1>
-<p style = 'font-size: 12px;'><%= link_to(avatar_for(post.user, size: 20), current_user) %>
-<p class="show_date">submiited <%= time_ago_in_words(@post.created_at)%> ago</p>
+<p class="show_date">submitted <%= time_ago_in_words(@post.created_at)%> ago</p>
 <p class="show_body"><%=@post.body.html_safe%></p>
 <p class="show_options"><%= link_to "edit", post_path(@post), method: :edit%> <%= link_to "delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}%></p>
 <a style = 'font-size: 16px;' href="debate/show">(1) debate</a>
