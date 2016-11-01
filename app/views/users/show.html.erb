@@ -3,46 +3,55 @@
 <div class = "user-profile">
 	<h1><%= avatar_for(@user, size: 40)%> <%= @user.username %></h1>
 
-<div>
-	<% if user_signed_in? != current_user?(@user) %>
+	<div>
+		<% if user_signed_in? != current_user?(@user) %>
 		<% if current_user.following?(@user)%>
-			<%= button_to "Unfollow", relationships_path(user_id: @user.id),
-			method: :delete, class: "button" %>
+		<%= button_to "Unfollow", relationships_path(user_id: @user.id),
+		method: :delete, class: "button" %>
 		<%else%>
-			<%= button_to "Follow", relationships_path(user_id: @user.id),
-			class: "button" %>
+		<%= button_to "Follow", relationships_path(user_id: @user.id),
+		class: "button" %>
 		<%end%>
-	<%end%>
-</div>
+		<%end%>
+	</div>
 
-<div class = "profile-description">
-	website:
-</div>
-<div class = "description-text">
-	<%= link_to @user.userurl %>
-</div>
+	<div class = "profile-description">
+		website:
+	</div>
+	<div class = "description-text">
+		<%= link_to @user.userurl %>
+	</div>
 
-<br>
+	<br>
 
-<div class = "profile-description">
-	bio: 
-</div>
-<div class = "description-text">
-	<%= @user.description %>
-</div>
+	<div class = "profile-description">
+		email:
+	</div>
+	<div class = "description-text">
+		<%= @user.email %>
+	</div>
 
-<br>
-<br>
+	<br>
 
-<!-- Edit profile & Logout -->
-<% if user_signed_in? && current_user?(@user) %>
+	<div class = "profile-description">
+		bio:
+	</div>
+	<div class = "description-text">
+		<%= @user.description %>
+	</div>
+
+	<br>
+	<br>
+
+	<!-- Edit profile & Logout -->
+	<% if user_signed_in? && current_user?(@user) %>
 	<%= link_to "Edit Profile", edit_user_path(@user)%>
-<%end%>
+	<%end%>
 
-<br>
+	<br>
 
-<% if user_signed_in? && current_user?(@user) %>
+	<% if user_signed_in? && current_user?(@user) %>
 	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-<%end%>
+	<%end%>
 
 </div>

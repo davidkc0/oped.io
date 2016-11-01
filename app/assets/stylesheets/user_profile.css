@@ -2,6 +2,10 @@
   /*position: relative;
   left: 90%;
   transform: translateX(-50%);*/
+
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .edit-item-title {
